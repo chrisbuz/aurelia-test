@@ -23,17 +23,17 @@ export class Users {
     });
 
     this.http = http;
-
   }
+
+  
 
   activate() {
     return this.http.fetch('allusers')
       .then(response => response.json())
       .then(users => this.users = users);
-
   }
 
-  submit(){
+  submit() {
     if(this.firstname === '' || this.lastname === '' || this.email === ''){
       toastr.warning("Please fill in all fields.", "Incomplete Form", {timeOut: 1000})
     }
