@@ -1,4 +1,4 @@
-# aurelia-skeleton-navigation
+# aurelia-skeleton-[my version]
 
 ## Running The App
 
