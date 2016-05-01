@@ -1,0 +1,59 @@
+<template>
+  <section class="animated fadeIn">
+    <div class="center"> 
+      <h2>${heading}</h2>
+
+      <div class="padding-bottom">
+        <form submit.delegate="submit()">
+        <div class="form-group">
+          <label >First Name</label>
+          <input type="text" class="form-control" placeholder="First Name" value.bind="firstname" >
+        </div>
+          <br>
+        <div class="form-group">
+          <label >Last Name</label>
+          <input type="text" class="form-control" placeholder="Last Name" value.bind="lastname">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" placeholder="Email" value.bind="email">
+        </div>
+
+            <input class="btn btn-info btn-lg" type="submit" value="Add User" />
+            <!--input class="button button-primary" type="submit" value="Add User" /-->
+
+        </form>
+      </div>
+
+    </div>
+    <hr class="padding-bottom">
+
+    <div class="row au-stagger">
+      <ul class="list-group animated fadeIn" repeat.for="user of users">
+        <li class="list-group-item">
+          ${user.id} 
+        </li>
+        <li class="list-group-item">
+          ${user.name} 
+          <button click.delegate="delete(user.id)" class="badge btn btn-warning"> Delete </button>
+        </li>
+        <li class="list-group-item">
+          ${user.email} 
+        </li>  
+          <hr>
+      </ul>
+
+        <!--div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="user of users">
+          <div class="card ">
+            <div class="content">
+              <p class="name">${user.id}</p>
+              <p class="name">${value.email}</p>
+              <p class="name">${value.name}</p>
+              <p> <a click.delegate="delete(user.id)" class="btn btn-default"> Delete </a></p>
+            </div>
+          </div>
+        </div-->
+    </div>
+  </section>
+</template>
